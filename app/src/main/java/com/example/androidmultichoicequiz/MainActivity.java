@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public Toolbar toolBar;
     RecyclerView recycler_category;
 
-   // @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    // @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,22 +48,17 @@ public class MainActivity extends AppCompatActivity {
         //Get Screen Height
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height = displayMetrics.heightPixels /8;
-
-
-       //
+        int height = displayMetrics.heightPixels / 8;
 
         CategoryAdapter adapter = new CategoryAdapter(MainActivity.this,
                 DBHelper.getInstance(this).getAllCategories());
 
-        System.out.println("why111" +DBHelper.getInstance(this).getAllCategories());
+        // System.out.println("why111" +DBHelper.getInstance(this).getAllCategories());
 
 
-        int spaceInPixal = 4;
-        recycler_category.addItemDecoration(new Spacedecoration(spaceInPixal));
+        int spaceInPixel = 4;
+        recycler_category.addItemDecoration(new Spacedecoration(spaceInPixel));
         recycler_category.setAdapter(adapter);
-
-
 
 
     }
